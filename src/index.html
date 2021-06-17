@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
@@ -10,17 +11,17 @@
 
 <body>
   <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
-  <div>
-    введите 1 дату (в формате дд/мм/гг)
-    <input type="text" class="getFirstDate">
+  <div class="firstDate">
+    enter first date
+    <input type="date" class="getFirstDate">
   </div>
-  <div>
-    введите 2 дату (в формате дд/мм/гг)
-    <input type="text" class="getSecondDate">
+  <div class="secondDate">
+    enter second date
+    <input type="date" class="getSecondDate">
   </div>
-  <button>Ввести даты</button>
-  <div>
-    <canvas id="myChart"></canvas>
+  <button>Enter dates</button>
+  <div class="Chart">
+    <canvas id="myChart" width="1000" height="600"></canvas>
   </div>
   <script src="./js/index.js"></script>
   <script src="./js/functions.js"></script>

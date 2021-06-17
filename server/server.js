@@ -1,22 +1,22 @@
-var express = require('express');
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const express = require('express');
+// const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const fetch = require('node-fetch');
-var DomParser = require('dom-parser');
-var bodyParser = require('body-parser');
+const DomParser = require('dom-parser');
+const bodyParser = require('body-parser');
 
-var parser = new DomParser();
-var app = express();
+const parser = new DomParser();
+const app = express();
 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 
-let firstDate = 0;
-let secondDate = 0;
+let firstDate;
+let secondDate;
 
 app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
@@ -27,19 +27,22 @@ async function getData() {
   } catch (err) {
     console.log(err);
     return {
-      error: "Server error. Couldn't get the currency data " + firstDate + secondDate
+      error: "Server error. Couldn't get the currency data" + firstDate + secondDate
     };
   }
 }
 
-app.get("/", async function (request, response) {
+app.get('/', async function (request, response) {
   response.send(await getData());
 });
 
-app.post("/", function (req, res) {
+app.post('/', function (req, res) {
+  /*
+    const salam = req.body;
+    console.log(salam);
+  */
   firstDate = req.body.date1;
   secondDate = req.body.date2;
-  res.send('Your name is ' + firstDate + " " + secondDate);
 });
 
 app.listen(8080);

@@ -53,9 +53,12 @@
   },
   "dependencies": {
     "babel-plugin-handlebars-inline-precompile": "^2.1.1",
+    "body-parser": "^1.19.0",
+    "dom-parser": "^0.1.6",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
     "lodash.template": "^4.5.0",
+    "node-fetch": "^2.6.1",
     "npm-watch": "^0.7.0",
     "terser-webpack-plugin": "^5.0.3"
   }

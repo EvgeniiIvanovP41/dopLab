@@ -1,0 +1,24 @@
+.firstDate {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+.secondDate {
+  margin-top: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+button {
+  margin-top: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+.chart {
+  display: block;
+}
+
+#myChart {
+  width: 1%;
+}
